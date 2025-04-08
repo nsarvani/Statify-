@@ -1,0 +1,91 @@
+// Full Interactive Spotify Wrapped Website
+// Install dependencies: npm create vite@latest my-music-app --template react
+// cd my-music-app && npm install
+// npm install tailwindcss chart.js axios react-router-dom chart.js react-chartjs-2
+
+import { useState, useEffect } from "react";
+import { Bar, Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, ArcElement, Tooltip, Legend } from 'chart.js';
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import axios from "axios";
+import "tailwindcss/tailwind.css";
+
+// Register Chart.js components
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, ArcElement, Tooltip, Legend);
+
+function Home() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-5">
+      <h1 className="text-4xl font-bold mb-6">🎵 Interactive Spotify Wrapped 🎶</h1>
+      <Link to="/dashboard">
+        <button className="bg-green-500 text-white px-6 py-3 rounded-lg text-lg shadow-lg hover:bg-green-600">
+          Get Started
+        </button>
+      </Link>
+    </div>
+  );
+}
+
+function Dashboard() {
+  const [musicData, setMusicData] = useState([]);
+
+  useEffect(() => {
+    // Load dataset (replace with actual dataset URL or API call)
+    axios.get("/data/spotify_recommendations.json")
+      .then(response => setMusicData(response.data))
+      .catch(error => console.error("Error loading data:", error));
+  }, []);
+
+  // Data Processing
+  const topSongs = musicData.slice(0, 5);
+  const chartData = {
+    labels: topSongs.map(song => song.name),
+    datasets: [{
+      label: "Popularity",
+      data: topSongs.map(song => song.popularity),
+      backgroundColor: ["#ff6384", "#36a2eb", "#ffce56", "#4bc0c0", "#9966ff"],
+    }],
+  };
+
+  const genreData = {
+    labels: ["Pop", "Rock", "Hip-Hop", "Electronic", "Jazz"],
+    datasets: [{
+      data: [30, 20, 25, 15, 10],
+      backgroundColor: ["#ff6384", "#36a2eb", "#ffce56", "#4bc0c0", "#9966ff"],
+    }],
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-900 text-white p-5">
+      <h1 className="text-3xl font-bold text-center mb-6">Your Personalized Music Insights</h1>
+      <div className="flex justify-center gap-10 flex-wrap">
+        {musicData.length > 0 && (
+          <div className="w-1/2">
+            <h2 className="text-xl font-semibold mb-2">Top 5 Songs</h2>
+            <Bar data={chartData} />
+          </div>
+        )}
+        <div className="w-1/3">
+          <h2 className="text-xl font-semibold mb-2">Genre Distribution</h2>
+          <Doughnut data={genreData} />
+        </div>
+      </div>
+      <div className="text-center mt-6">
+        <Link to="/">
+          <button className="bg-blue-500 px-6 py-3 rounded-lg hover:bg-blue-600">Go Back</button>
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
+  );
+}

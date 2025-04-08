@@ -1,0 +1,147 @@
+{
+  "topSongs": [
+    {
+      "id": 1,
+      "trackName": "Blinding Lights",
+      "artists": "The Weeknd",
+      "releasedDate": "2020-03-20",
+      "streams": 3703895074,
+      "bpm": 171,
+      "key": "A♯",
+      "mode": "Major",
+      "danceability": 0.799,
+      "valence": 0.334,
+      "energy": 0.73,
+      "acousticness": 0.00146,
+      "instrumentalness": 0.0000954,
+      "liveness": 0.0897,
+      "speechiness": 0.0598
+    },
+    {
+      "id": 2,
+      "trackName": "Dance Monkey",
+      "artists": "Tones and I",
+      "releasedDate": "2019-05-10",
+      "streams": 2721928354,
+      "bpm": 98,
+      "key": "F♯",
+      "mode": "Minor",
+      "danceability": 0.824,
+      "valence": 0.513,
+      "energy": 0.588,
+      "acousticness": 0.692,
+      "instrumentalness": 0,
+      "liveness": 0.149,
+      "speechiness": 0.0924
+    },
+    {
+      "id": 3,
+      "trackName": "Someone You Loved",
+      "artists": "Lewis Capaldi",
+      "releasedDate": "2018-11-08",
+      "streams": 2589843818,
+      "bpm": 110,
+      "key": "C",
+      "mode": "Major",
+      "danceability": 0.501,
+      "valence": 0.405,
+      "energy": 0.405,
+      "acousticness": 0.751,
+      "instrumentalness": 0,
+      "liveness": 0.105,
+      "speechiness": 0.0319
+    },
+    {
+      "id": 4,
+      "trackName": "Sunflower",
+      "artists": "Post Malone, Swae Lee",
+      "releasedDate": "2018-10-18",
+      "streams": 2423574583,
+      "bpm": 90,
+      "key": "D",
+      "mode": "Major",
+      "danceability": 0.755,
+      "valence": 0.479,
+      "energy": 0.522,
+      "acousticness": 0.539,
+      "instrumentalness": 0,
+      "liveness": 0.0934,
+      "speechiness": 0.0489
+    },
+    {
+      "id": 5,
+      "trackName": "bad guy",
+      "artists": "Billie Eilish",
+      "releasedDate": "2019-03-29",
+      "streams": 2362015338,
+      "bpm": 135,
+      "key": "G",
+      "mode": "Minor",
+      "danceability": 0.701,
+      "valence": 0.562,
+      "energy": 0.425,
+      "acousticness": 0.328,
+      "instrumentalness": 0.0018,
+      "liveness": 0.1,
+      "speechiness": 0.375
+    }
+  ],
+  "audioFeatures": {
+    "danceability": 0.716,
+    "energy": 0.534,
+    "acousticness": 0.462,
+    "instrumentalness": 0.000419,
+    "liveness": 0.1198,
+    "speechiness": 0.1196,
+    "valence": 0.4586
+  },
+  "topArtists": [
+    {
+      "name": "The Weeknd",
+      "topTrack": "Blinding Lights",
+      "totalStreams": 3703895074,
+      "genres": ["R&B", "Pop"],
+      "avgDanceability": 0.71,
+      "avgEnergy": 0.74
+    },
+    {
+      "name": "Tones and I",
+      "topTrack": "Dance Monkey",
+      "totalStreams": 2721928354,
+      "genres": ["Pop", "Alternative"],
+      "avgDanceability": 0.824,
+      "avgEnergy": 0.588
+    },
+    {
+      "name": "Lewis Capaldi",
+      "topTrack": "Someone You Loved",
+      "totalStreams": 2589843818,
+      "genres": ["Pop", "Singer-Songwriter"],
+      "avgDanceability": 0.501,
+      "avgEnergy": 0.405
+    },
+    {
+      "name": "Post Malone",
+      "topTrack": "Sunflower",
+      "totalStreams": 2423574583,
+      "genres": ["Hip-Hop", "Pop"],
+      "avgDanceability": 0.755,
+      "avgEnergy": 0.522
+    },
+    {
+      "name": "Billie Eilish",
+      "topTrack": "bad guy",
+      "totalStreams": 2362015338,
+      "genres": ["Pop", "Alternative"],
+      "avgDanceability": 0.701,
+      "avgEnergy": 0.425
+    }
+  ],
+  "popularGenres": {
+    "Pop": 45,
+    "Hip-Hop": 25,
+    "R&B": 15,
+    "Alternative": 10,
+    "Singer-Songwriter": 5
+  }
+}
